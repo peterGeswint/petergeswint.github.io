@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+		<!-- Preload favicon for faster rendering -->
+		<link rel="preload" as="image" href="Images/favicon.png" />
+		<link rel="icon" type="image/png" href="Images/favicon.png" />
+	
 		<title>PG</title>
-		<link rel="stylesheet" href="style.css"/>
+	
+		<!-- Preload CSS to improve rendering speed -->
+		<link rel="preload" href="style.css" as="style" />
+		<link rel="stylesheet" href="style.css" />
+	
+		<!-- External Libraries -->
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 		<script src="https://kit.fontawesome.com/43df5438bc.js" crossorigin="anonymous"></script>
+	
+		<!-- Main JavaScript (Defer ensures it loads after HTML parsing) -->
+		<script src="main.js" defer></script>
 	</head>
+
 	<body>
 		<div id="header">
 			<div class="container">
 				<nav>
-					<img src="" class="logo"/>
+					<img src="Images/logo_transparent2.png" class="logo"/>
 					<ul id="sideMenu">
 						<li><a href="#header">Home</a></li>
 						<li><a href="#about">About</a></li>
+						<li><a href="#services">Services</a></li>
 						<li><a href="#portfolio">Portfolio</a></li>
 						<li><a href="#contact">Contact</a></li>
 						<i class="fas fa-solid fa-xmark" onclick="closeMenu()"></i>
@@ -25,8 +41,9 @@
 				</nav>
 			</div>
 			<div class="header-text">
-				<p>Software Developer</p>
+				<p><span class="typedText">Developer</span></p>
 				<h1>Hi,I'm <span>Peter Geswint</span><br/> From South Africa</h1>
+				
 			</div>
 
 		</div>
@@ -39,7 +56,10 @@
 					</div>
 					<div class="about-col-2">
 						<h1 class="subtitle">About Me</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, natus, enim, harum repellat explicabo cumque reiciendis voluptas et nam accusantium tempora magnam nisi! Molestias suscipit incidunt laborum dolores dicta dolorum.</p>
+						<p>Hi, and thank you for visiting my portfolio! I'm passionate about coding and problem-solving, with a strong focus on
+						design and creating seamless, user-friendly experiences. I'm always excited to take on new projects, so feel free to
+						reach out for any of your software development needs</p>
+
 						<div class="tab-title">
 							<p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
 							<p class="tab-links" onclick="openTab('experience')">Experience</p>
@@ -47,9 +67,11 @@
 						</div>
 						<div class="tab-contents active-tab" id="skills">
 							<ul>
-								<li><span>Software Developer</span><br/>frontend development/ fullstack development</li>
+								<li><span>Software Developer</span><br/>frontend development/fullstack development</li>
 								<li><span>UI/UX</span><br />Web & Mobile Designer</li>
 								<li><span>Data Analysis</span><br />Data Analysis with python</li>
+								<li><span>SEO</span><br />Search Engine Optimization</li>
+								<li><span>Database</span><br/>MSSQL<br/>MySQL</li>
 							</ul>
 						</div>
 							<div class="tab-contents" id="experience">
@@ -76,27 +98,33 @@
 					<div>
 						<i class="fa-solid fa-laptop-code"></i>
 						<h2>Full Stack Project</h2>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis vel veritatis eaque fuga saepe suscipit enim. Modi rerum repudiandae alias esse inventore itaque atque tempora quos explicabo possimus, molestias consectetur!</p>
-						<a href="#">Learn More</a>
+						<p>"I hold a diploma in Software Development from Nelson Mandela University, where I gained extensive knowledge of C# and
+						the .NET framework. In addition to my university studies, I have built my own projects and taken courses to further
+						deepen my expertise. I also expanded my skill set by completing the ALX Software Engineering program, where I learned
+						Python. I offer full-stack development services and am always eager to collaborate on new projects. Feel free to reach
+						out to discuss your ideas!</p>
 					</div>
 					
 						<div>
 							<i class="fa-brands fa-figma"></i>
 							<h2>UX/UI Design for Web and Mobile</h2>
-							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis vel veritatis eaque fuga saepe suscipit enim.
-								Modi rerum repudiandae alias esse inventore itaque atque tempora quos explicabo possimus, molestias consectetur!
+							<p>I offer UX/UI design services, combining both creativity and functionality to craft intuitive user experiences. I
+							studied design principles at Nelson Mandela University and further deepened my expertise through an in-depth web and
+							mobile design course from ZTM on Udemy. This course provided extensive training in Figma, covering everything from
+							wireframing to high-fidelity prototyping. Whether you need a sleek website or a seamless mobile app interface, I’m here
+							to bring your vision to life. Let’s collaborate on your next project!
 							</p>
-								<a href="#">Learn More</a>
 						</div>
 					
 
 						<div>
 							<i class="fa-regular fa-file-code"></i>
 								<h2>Front End Project</h2>
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis vel veritatis eaque fuga saepe suscipit enim.
-									Modi rerum repudiandae alias esse inventore itaque atque tempora quos explicabo possimus, molestias consectetur!
+								<p>I offer front-end development services, creating visually appealing and highly responsive web applications. I learned
+								JavaScript, React, HTML, and CSS through an edX course and further specialized in front-end development during my ALX
+								Software Engineering program. This allowed me to deepen my expertise in building dynamic and user-friendly interfaces.
+								Whether you need a sleek website or an interactive web application, I’m here to help. Let’s work together to bring your
 								</p>
-								<a href="#">Learn More</a>
 						</div>
 							
 							
@@ -113,21 +141,29 @@
 					<div class="work">
 							<img src="Images/Screenshot 2024-09-18 195211.png" alt="skills share home page">
 							<div class="layer">
-								<h3>Fully Responsive Website</h3>
-								<p>Short description of the project.</p>
-								<a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+								<h3>Skill Share Connect</h3>
+								<p>This project was created for my alx course.</p>
+								<a href="https://github.com/peterGeswint/Alx-Portfolio-Project-SkillsShareConnect"><i class="fa-solid fa-up-right-from-square"></i></a>
 							</div>
 					</div>
 						<div class="work">
 							<img src="Images/itchronicles.png" alt="it chronicles home page">
 								<div class="layer">
-									<h3>Fully Responsive Website</h3>
-									<p>Short description of the project.</p>
-									<a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+									<h3>IT Chronicles - My ALX portfolio project</h3>
+									<p>This project was created for my ALX frontend specialization course...</p>
+									<a href="https://github.com/peterGeswint/ITChronicles" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
 								</div>
 						</div>
+						<div class="work">
+							<img src="Images/school.png" alt="school management web app home page">
+							<div class="layer">
+								<h3> School Management Website</h3>
+								<p>This project was created with .NET MVC, It is a school management site.</p>
+								<a href="https://github.com/peterGeswint/SchoolManagementApp.mvc" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+							</div>
+						</div>
 				</div>
-				<a href="#" class="btn">See More</a>
+				<a href="https://github.com/peterGeswint" class="btn">See More</a>
 
 			</div>
 			<div id="contact">
@@ -158,7 +194,15 @@
 				</div>
 			</div>
 			<div class="copyright">
-				<p>Copyright - Made by Peter Geswint <i class="fa-solid fa-heart"></i></p>
+				<p>Copyright &copy; - Made by Peter Geswint <i class="fa-solid fa-heart"></i></p>
+				<div class="footer-menu">
+					<ul>
+						<li><a href="#header">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#work">Work</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<script>
